@@ -27,4 +27,4 @@ test:
 
 production:
    <<: *default
-   database: nittygritty-staff
+   database: nittygritty-staff_production
