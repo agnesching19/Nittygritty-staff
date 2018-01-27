@@ -35,9 +35,7 @@ ActiveRecord::Schema.define(version: 20180127170031) do
     t.datetime "updated_at", null: false
     t.bigint "voted_staff_id"
     t.index ["staff_id"], name: "index_votes_on_staff_id"
-    t.index ["voted_staff_id"], name: "index_votes_on_voted_staff_id"
   end
 
   add_foreign_key "votes", "staffs"
-  add_foreign_key "votes", "voted_staffs"
 end

@@ -12,7 +12,7 @@ default: &default
 development:
   adapter: postgresql
   encoding: unicode
-  database: agnesching
+  database: nittygritty-staff
   pool: 5
   username: agnesching
   password:
@@ -20,11 +20,11 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: agnesching
+  database: nittygritty-staff
   pool: 5
   username: agnesching
   password:
 
 production:
    <<: *default
-   database: agnesching
+   database: nittygritty-staff

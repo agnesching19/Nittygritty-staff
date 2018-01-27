@@ -1,1 +1,7 @@
-<h1>this is a vote index page</h1>
+<h1>this is vote result page</h1>
+
+<% @votes.map do |vote| %>
+  <li>
+   <%= vote.id %>
+  </li>
+<% end %>
