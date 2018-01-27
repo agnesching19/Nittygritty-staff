@@ -11,7 +11,7 @@ class StaffsController < ApplicationController
     if @staff.save
       redirect_to staff_path(@staff)
     else
-      render :new
+      render 'pages/home'
     end
   end
 
@@ -23,7 +23,8 @@ class StaffsController < ApplicationController
   end
 
   def show
-    @staff = Staff.find(params[:id])
+    @vote = Vote.new
+    @staffs = Staff.all
   end
 
   def update
