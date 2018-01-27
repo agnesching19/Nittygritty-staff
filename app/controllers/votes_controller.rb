@@ -10,6 +10,14 @@ class VotesController < ApplicationController
   def create
     @vote = Vote.new(vote_params)
     @vote.staff = @staff
+
+    @voted_staff_list = ['simon', 'agnes', 'bob']
+    # excluded_staff = Staff.where.not('staff_id = ?', current_user)
+    # excluded_staff.each do |staff|
+    #   @voted_staff_list << staff.name
+    #   return @voted_staff_list
+    # end
+
     if @vote.save
       redirect_to root_path, notice: 'You just voted!'
     else
@@ -21,25 +29,8 @@ class VotesController < ApplicationController
     @vote = Vote.new
   end
 
-  def edit
-  end
-
   def show
     @vote.staff = @staff
-  end
-
-  def update
-    if @vote.update(vote_params)
-      redirect_to root_path
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @vote.staff = @staff
-    @vote.destroy
-    redirect_to root_path
   end
 
   private
