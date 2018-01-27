@@ -20,6 +20,10 @@ gem 'nokogiri'
 # Use bootstrap for CSS
 gem 'bootstrap-sass'
 gem 'simple_form'
+gem 'coffee-rails', '~> 4.2'
+gem 'sprockets-rails', :require =>  'sprockets/railtie'
+gem 'turbolinks', '~> 5'
+gem 'jquery-rails', '4.1.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
