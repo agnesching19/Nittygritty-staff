@@ -7,8 +7,9 @@ class StaffsController < ApplicationController
 
   def create
     @staff = Staff.new(staff_params)
+    @votes = Vote.all
     if @staff.save
-      redirect_to @staff, notice: 'Staff was successfully created.'
+      redirect_to staff_path(@staff)
     else
       render :new
     end
