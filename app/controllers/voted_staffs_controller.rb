@@ -1,8 +1,12 @@
 class VotedStaffsController < ApplicationController
-  before_action :set_voted_staff, only: [:show, :edit, :update, :destroy]
+  before_action :set_voted_staff, only: [:show, :edit, :destroy]
 
   def index
     @voted_staffs = VotedStaff.all
+  end
+
+  def new
+    @voted_staff = VotedStaff.new
   end
 
   def create
@@ -12,10 +16,6 @@ class VotedStaffsController < ApplicationController
     else
       render 'pages/home'
     end
-  end
-
-  def new
-    @voted_staff = VotedStaff.new
   end
 
   def edit

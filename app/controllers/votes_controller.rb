@@ -1,32 +1,23 @@
 class VotesController < ApplicationController
   before_action :set_votes, only: [:show]
-  before_action :set_staff, only: [:index, :new, :create, :show]
+  before_action :set_staff, only: [:new, :create, :show]
 
   def index
     @votes = Vote.all
-    @votes.staff = @staff
+  end
+
+  def new
+    @vote = Vote.new
   end
 
   def create
     @vote = Vote.new(vote_params)
     @vote.staff = @staff
-
-    @voted_staff_list = ['simon', 'agnes', 'bob']
-    # excluded_staff = Staff.where.not('staff_id = ?', current_user)
-    # excluded_staff.each do |staff|
-    #   @voted_staff_list << staff.name
-    #   return @voted_staff_list
-    # end
-
-    if @vote.save
-      redirect_to root_path, notice: 'You just voted!'
+    if @vote.save!
+      redirect_to votes_path, notice: 'You just voted successully!'
     else
       render :new
     end
-  end
-
-  def new
-    @vote = Vote.new
   end
 
   def show
@@ -44,6 +35,6 @@ class VotesController < ApplicationController
   end
 
   def vote_params
-    params.require(:vote).permit(:voted_staff, :staff_id)
+    params.require(:vote).permit(:staff_id, :voted_staff_id)
   end
 end
