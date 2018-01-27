@@ -7,7 +7,7 @@
     <% @votes.each do |vote| %>
         <li>
           <div class='vote'>
-            <%= vote.voted_staff_id %>
+            <%= vote.voted_staff.name %>
           </div>
         </li>
     <% end %>
