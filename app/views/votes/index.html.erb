@@ -1,4 +1,15 @@
-<h1>this is vote result page</h1>
+<div class="container">
+  <h1>This is vote result page</h1>
 
-<%= @votes.count %>
+  <p id="notice"><%= notice %></p>
 
+  <ul class="list-unstyled">
+    <% @votes.each do |vote| %>
+        <li>
+          <div class='vote'>
+            <%= vote.voted_staff_id %>
+          </div>
+        </li>
+    <% end %>
+  </ul>
+</div>

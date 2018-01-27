@@ -4,6 +4,8 @@ class VotesController < ApplicationController
 
   def index
     @votes = Vote.all
+    @voted_staffs = VotedStaff.all
+    @voted_staff = @voted_staffs.where(id: @voted_staff_id)
   end
 
   def new
