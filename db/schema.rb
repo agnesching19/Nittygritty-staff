@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180127140051) do
+ActiveRecord::Schema.define(version: 20180127170031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,13 +23,21 @@ ActiveRecord::Schema.define(version: 20180127140051) do
     t.boolean "admin", default: false
   end
 
-  create_table "votes", force: :cascade do |t|
-    t.bigint "staff_id"
-    t.string "voted_staff"
+  create_table "voted_staffs", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.bigint "staff_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "voted_staff_id"
     t.index ["staff_id"], name: "index_votes_on_staff_id"
+    t.index ["voted_staff_id"], name: "index_votes_on_voted_staff_id"
   end
 
   add_foreign_key "votes", "staffs"
+  add_foreign_key "votes", "voted_staffs"
 end

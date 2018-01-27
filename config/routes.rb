@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :staffs do
     resources :votes, only: [:new, :index, :create, :show]
   end
+  resources :voted_staffs
 
   root to: "pages#home"
 end
