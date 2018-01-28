@@ -16,7 +16,20 @@
     <% counts[a] += 1 %>
   <% end %>
 
-  <% counts.each do |k, v| %>
-    <%= k %> : <%= v %> <br>
-  <% end %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% counts.each do |k, v| %>
+        <tr>
+          <td><%= k %></td>
+          <td><%= v %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
