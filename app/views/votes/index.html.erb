@@ -2,6 +2,7 @@
   <h1>This is vote result page</h1>
 
   <p id="notice"><%= notice %></p>
+
   <% arr = [] %>
   <% array = [] %>
     <% @votes.each do |vote| %>
@@ -9,5 +10,13 @@
     <% end %>
   <% arr << array %>
   <% voted_array = arr[0][0..-1].each { |x| print x } %>
-  <%= voted_array[0..-1].count { |x| x[0..-1] == itself } %>
+
+  <% counts = Hash.new 0 %>
+  <% voted_array.each do |a| %>
+    <% counts[a] += 1 %>
+  <% end %>
+
+  <% counts.each do |k, v| %>
+    <%= k %> : <%= v %> <br>
+  <% end %>
 </div>
