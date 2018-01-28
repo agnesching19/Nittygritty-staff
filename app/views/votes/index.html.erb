@@ -2,9 +2,10 @@
   <h1>This is vote result page</h1>
 
   <p id="notice"><%= notice %></p>
-
+  <% voted_array = [] %>
+  <% array = [] %>
     <% @votes.each do |vote| %>
-      <% voted_array = [] %>
-      <%= voted_array << vote.voted_staff.name %>
+      <% array << vote.voted_staff.name %>
     <% end %>
+  <%= voted_array << array %>
 </div>
