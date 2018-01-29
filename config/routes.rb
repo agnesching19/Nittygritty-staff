@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/votes', to: 'votes#index'
   get '/admin', to: 'pages#admin'
   delete '/admin/votes', to:'pages#destroy', as: :admin_votes
+  get '/admin/stop_vote', to: 'pages#stop_vote'
 
   root to: "pages#home"
 end

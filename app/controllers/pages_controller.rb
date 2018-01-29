@@ -8,6 +8,11 @@ class PagesController < ApplicationController
     @voted_staffs = VotedStaff.all
   end
 
+  def stop_vote
+    Vote.new ? false : true
+    redirect_to admin_path
+  end
+
   def destroy
     @votes = Vote.all
     @votes.each(&:destroy)
