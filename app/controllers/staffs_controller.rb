@@ -24,7 +24,7 @@ class StaffsController < ApplicationController
 
   def show
     @vote = Vote.new
-    @staffs = Staff.all
+    @voted_staffs = VotedStaff.all
   end
 
   def update
