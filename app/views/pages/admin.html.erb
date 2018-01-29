@@ -1,0 +1,30 @@
+<div class="container">
+<!-- • add members of staff to the poll -->
+  <%= simple_form_for(@voted_staff) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :name, placeholder: 'STAFF NAME', label: false  %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, 'ADD STAFF TO POLL', class: "btn btn-info" %>
+    </div>
+  <% end %>
+  <!-- • remove members of staff from the poll -->
+  <hr>
+    <%= simple_form_for(@voted_staff, :method => :destroy) do |f| %>
+      <div class="form-inputs">
+        <%= f.input :name, collection: @voted_staffs, label: false   %>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, 'REMOVE STAFF FROM POLL', class: "btn btn-info" %>
+      </div>
+    <% end %>
+  <!-- • change the vote from open to closed -->
+  <hr>
+    <%= link_to "CLOSE POLL", admin_path, class: 'btn btn-info' %>
+  <!-- • view the results so far for each member of staff -->
+  <hr>
+    <%= link_to "VIEW CURRENT RESULTS", votes_path, class: 'btn btn-info' %>
+  <!-- • restart a vote by setting the vote for all staff to zero -->
+  <hr>
+    <%= link_to "RESET POLL", admin_votes_path, class: 'btn btn-info', method: :delete, data: { confirm: "Are you sure you want to delete?" }  %>
+</div>

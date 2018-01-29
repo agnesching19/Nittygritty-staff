@@ -1,5 +1,5 @@
 class VotesController < ApplicationController
-  before_action :set_vote, only: [:show]
+  before_action :set_vote, only: [:show, :destroy]
   before_action :set_staff, only: [:new, :create, :show]
 
   def index

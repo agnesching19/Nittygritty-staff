@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :voted_staffs, except: :update
   get '/votes', to: 'votes#index'
   get '/admin', to: 'pages#admin'
+  delete '/admin/votes', to:'pages#destroy', as: :admin_votes
 
   root to: "pages#home"
 end

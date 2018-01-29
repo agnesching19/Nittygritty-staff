@@ -11,6 +11,18 @@ def prepare
   puts ""
 end
 
+def admin_staff
+  puts "--- creating an admin ---"
+    Staff.create!({
+      email: "admin@nittygritty.net",
+      name: "Nitty Gritty",
+      admin: true
+    })
+  puts "    #{Staff.first.name} has been added to the db"
+  puts "--- admin staff seeding completed ---"
+  puts "--------------------"
+end
+
 def staffs(number)
   puts "--- creating #{number} staffs ---"
   number.times {
@@ -60,7 +72,8 @@ end
 
 prepare
 puts "--- seeding the db ---"
-
+# Creating the admin staff for the user journey
+admin_staff
 # Creating 60 staffs
 staffs(60)
 # Creating 20 voted_staffs
