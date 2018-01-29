@@ -9,20 +9,22 @@
 }
 
 /* Logo */
-.navbar-brand img{
+.navbar-left {
+  display: flex;
+}
+
+.navbar-logo img{
   height: 35px;
   width: 35px;
+  margin-left: 40px;
+  margin-top: 12px;
 }
 
-.navbar-logo {
-  margin-left: 30px;
-}
-
-/* Navbar right */
-.navbar-right {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.navbar-brand {
+  margin-left: 8px;
+  margin-top: 5px;
+  padding-left: 0;
+  display: space-between;
 }
 
 /* Navbar link */

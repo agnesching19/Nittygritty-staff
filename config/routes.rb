@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   end
   resources :voted_staffs, except: :update
   get '/votes', to: 'votes#index'
+  get '/admin', to: 'pages#admin'
 
   root to: "pages#home"
 end

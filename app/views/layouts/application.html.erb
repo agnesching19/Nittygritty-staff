@@ -13,8 +13,16 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
-    <%= yield %>
+    <div class="navbar">
+      <%= render "shared/navbar" %>
+    </div>
+    <div class="content">
+      <%= yield %>
+    </div>
+
   </body>
+  <footer>
+    <%= render "shared/footer" %>
+  </footer>
   <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
 </html>

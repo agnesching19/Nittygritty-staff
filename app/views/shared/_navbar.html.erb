@@ -1,9 +1,14 @@
 <div class="navbar">
   <!-- Logo -->
-  <div class="navbar-logo">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "favicon.png" %>
-    <% end %>
+  <div class="navbar-left">
+    <div class="navbar-logo">
+      <%= link_to root_path do %>
+        <%= image_tag "favicon.png" %>
+      <% end %>
+    </div>
+    <div class="navbar-brand">
+      <p>nittygritty</p>
+    </div>
   </div>
 
   <!-- Add a new team -->
